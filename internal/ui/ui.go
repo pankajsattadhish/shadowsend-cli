@@ -69,28 +69,12 @@ func Banner() {
 		return
 	}
 
-	lines := []string{
-		"  ██████╗ ██╗  ██╗███╗   ██╗████████╗███╗   ███╗",
-		"  ██╔══██╗██║  ██║████╗  ██║╚══██╔══╝████╗ ████║",
-		"  ██████╔╝███████║██╔██╗ ██║   ██║   ██╔████╔██║",
-		"  ██╔═══╝ ██╔══██║██║╚██╗██║   ██║   ██║╚██╔╝██║",
-		"  ██║     ██║  ██║██║ ╚████║   ██║   ██║ ╚═╝ ██║",
-		"  ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝     ╚═╝",
-	}
-
-	// Gradient: top is R=0, G=255, B=209 (#00FFD1)
-	//           bot is R=0, G=184, B=169 (#00B8A9)
-	// We interpolate G and B across the lines. R stays 0.
 	fmt.Fprintln(os.Stderr)
-	for i, line := range lines {
-		// t goes from 0.0 (first line) to 1.0 (last line)
-		t := float64(i) / float64(len(lines)-1)
-		g := int(255 - t*71) // 255 → 184
-		b := int(209 - t*40) // 209 → 169
-		color := fmt.Sprintf("\033[38;2;0;%d;%dm", g, b)
-		fmt.Fprintf(os.Stderr, "%s%s%s\n", color, line, reset)
-	}
-	fmt.Fprintf(os.Stderr, "%s  encrypted file sharing that self-destructs%s\n\n", muted, reset)
+	fmt.Fprintf(os.Stderr, "  %s╔══ ShadowSend ═══╗%s\n", cyan, reset)
+	fmt.Fprintf(os.Stderr, "  %s║ encrypted file  %s║%s\n", muted, " ", reset)
+	fmt.Fprintf(os.Stderr, "  %s║ sharing that    %s║%s\n", muted, " ", reset)
+	fmt.Fprintf(os.Stderr, "  %s║ self-destructs  %s║%s\n", muted, " ", reset)
+	fmt.Fprintf(os.Stderr, "  %s╚═════════════════╝%s\n\n", cyan, reset)
 }
 
 // UpdateHint prints a subtle update notification.

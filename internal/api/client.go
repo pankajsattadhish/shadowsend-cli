@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const DefaultBaseURL = "https://shadowsend.com"
+const DefaultBaseURL = "https://shadowsend-tau.vercel.app"
 
 type Client struct {
 	BaseURL    string
