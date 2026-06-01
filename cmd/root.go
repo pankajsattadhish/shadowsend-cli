@@ -72,12 +72,12 @@ func printUsage() {
 %sEXAMPLES%s
   shadowsend send report.pdf                      Upload with 24h expiry (default)
   shadowsend send logs.tar.gz --expiry 1h         Upload with 1h expiry
-  shadowsend get https://shadowsend.com/f/abc123#key    Download & decrypt
+  shadowsend get https://shadow-send.vercel.app/f/abc123#key    Download & decrypt
   shadowsend report.pdf | pbcopy                  Upload & copy link to clipboard
   shadowsend note "API key: sk-123"               Upload a text note
   echo "secret" | shadowsend note                 Pipe text to upload
 
-  %s── pankajsattadhish@gmail.com · https://shadowsend.com ──%s
+  %s── pankajsattadhish@gmail.com · https://shadow-send.vercel.app ──%s
 
 `, c, r, c, r, m, r)
 }

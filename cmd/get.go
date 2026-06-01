@@ -38,7 +38,7 @@ func runGet(args []string) {
 	// Extract file ID from path: /f/{id}
 	pathParts := strings.Split(strings.TrimPrefix(parsed.Path, "/"), "/")
 	if len(pathParts) < 2 || pathParts[0] != "f" {
-		ui.Error("INVALID_URL: expected format https://shadowsend.com/f/{id}#{key}")
+		ui.Error("INVALID_URL: expected format https://shadow-send.vercel.app/f/{id}#{key}")
 		os.Exit(1)
 	}
 	fileID := pathParts[1]

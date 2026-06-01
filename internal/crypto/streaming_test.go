@@ -19,8 +19,8 @@ func TestEncryptStream_SmallFile(t *testing.T) {
 	}
 
 	// Check magic header
-	if string(ciphertext[:4]) != "PHNT" {
-		t.Errorf("expected magic PHNT, got %s", ciphertext[:4])
+	if string(ciphertext[:4]) != "SEND" {
+		t.Errorf("expected magic SEND, got %s", ciphertext[:4])
 	}
 
 	// Decrypt

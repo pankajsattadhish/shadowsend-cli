@@ -12,7 +12,7 @@ import (
 
 const (
 	// Streaming parameters matching web app
-	StreamMagic      = "PHNT"
+	StreamMagic      = "SEND"
 	StreamVersion    = 1
 	StreamChunkSize  = 64 * 1024 // 64KB chunks
 	StreamNonceSize  = 12
@@ -29,7 +29,7 @@ type StreamHeader struct {
 	BaseNonce   [StreamNonceSize]byte
 }
 
-// isStreamingFormat checks if data starts with PHNT magic
+// isStreamingFormat checks if data starts with SEND magic
 func isStreamingFormat(data []byte) bool {
 	return len(data) >= 4 && string(data[:4]) == StreamMagic
 }
